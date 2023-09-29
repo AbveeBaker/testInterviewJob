@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Ejemplo Sort Table 1" icon-name="standard:contact" >
+        <template if:true={spinnerActive}>
+            <lightning-spinner alternative-text="Loading" size="xx-small"></lightning-spinner>
+        </template>
+        <br/>
+        <div style="width: auto;">
+            <template if:true={data}>
+                <lightning-datatable data={data}
+                                     columns={columns}
+                                     key-field="id"
+                                     sorted-by={sortBy}
+                                     sorted-direction={sortDirection}
+                                     onsort={doSorting}
+                                     hide-checkbox-column="true"
+                                     onrowaction={callRowAction}></lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>
